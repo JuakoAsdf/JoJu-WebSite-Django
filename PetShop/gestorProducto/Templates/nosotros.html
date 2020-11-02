@@ -1,0 +1,60 @@
+{% extends "index.html"%}
+{% load static %}
+{% block contenido%}
+<head>
+	<link rel="stylesheet" href="{% static 'css/Nosotros.css' %}">
+</head>
+<section><!-- Historia -->	
+	<div class="container bs-article">
+		<article class="row">
+			<div class="col">
+			  <br>
+				<h4 class="title-article text-center">Quienes Somos</h4>
+			  <br> 
+			 <section class="text-justify">
+				<p id="justificar">
+					<strong> JoJu - PetShop </strong>
+					es una tienda que se dedica a la venta de productos, artículos y alimentos 
+					para mascotas.
+				</p>
+				<p id="justificar2">
+					Es un PetShop que nació en 2020, motivado por  sus dueños, que son amantes de las mascotas 
+					y vieron en este negocio una oportunidad. Fue una idea que se gestó con mucho cariño entendiendo 
+					las necesidades de las personas cuando recurren a un lugar para comprarle algo a su mascota. El 
+					equipo está conformado por veterinarios, nutricionistas y técnicos en veterinaria, especialistas en 
+					áreas donde cada uno, aporta sus conocimientos para entregar un mejor servicio.
+				</p>
+				<p id="justificar3">
+					Hoy<strong> JoJu PetShop </strong>
+					cuenta con un apartado de adopción, donde tenemos muy bien cuidados a todos los animalitos 
+					que hemos ido rescatando, dandoles su cuidado correspondiente.
+				</p>
+				<div class="row justify-content-center">
+					<a href={% url "adopta" %}>
+						<img src={% static '/img/fotos/catdog.gif' %} width="380" height="218" alt=""
+						title="Click para ver animalitos en adopción!!♥">
+					</a>
+				</div>
+				<br>
+				<p id="justificar4">
+					Desde ahora es una tienda online 24 horas. También tiene servicio de peluquería, donde bañan y 
+					cortan el pelo de sus mascotas, además de ofreceer servicios de cepillado exclusivo para eliminar 
+					el pelo suelto del animalito.
+				</p>
+				<p id="justificar5">
+					Cada día hacemos el mejor esfuerzo para teer a disposición las mejores marcas en accesorios y 
+					productos para perritos y gatitos, así como también las mejores marcas en alimnetos, con la ventaja 
+					de un personal capacitado, entrega los mejores consejos.
+				</p>
+				<p id="justificar6">
+					<strong>Joju - PetShop</strong>; La marca que más saben de mascotas, al mejor precio.
+				</p>
+			  </section>
+			</div>
+		</article>
+	</div>
+	<div class="row justify-content-center">
+		<img src={% static '/img/fotos/catdog.png' %} width="400" height="200" alt="">
+	</div>
+</section>
+{% endblock %}

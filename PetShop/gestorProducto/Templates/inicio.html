@@ -1,0 +1,96 @@
+{% extends "index.html"%}
+{% load static %}
+{% block contenido%}
+<head>
+	
+</head>
+<section><!-- Carrusel -->
+		<br>
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <a href="{%url 'adultocat'%}">
+                     <picture>
+                      <img src={% static '/img/fotos/PROMOMIAU.jpg' %}  alt="responsive image" class="d-block img-fluid" > 					  
+                  <!--<img src={% static '/img/fotos/PROMOMIAU1.jpg' %}  media="(min-width: 769px)">
+                      <img src={% static '/img/fotos/PROMOMIAU2.jpg' %}  media="(min-width: 577px)">
+                      <img src={% static '/img/fotos/PROMOMIAU3.jpg' %}  alt="responsive image" class="d-block img-fluid">-->
+                    </picture>
+                </a> 
+            </div>
+            <!-- /.carousel-item -->
+            <div class="carousel-item">
+                <a href="{%url 'adultodog'%}">
+                     <picture>
+                      <img src={% static '/img/fotos/PROMOGUAU.jpg' %}  alt="responsive image" class="d-block img-fluid">
+					  <!--
+                      <source srcset="fotos/PROMOGUAU1.jpg" media="(min-width: 769px)">
+                       <source srcset="fotos/PROMOGUAU2.jpg" media="(min-width: 577px)">
+                      <img src="fotos/PROMOGUAU3.jpg" alt="responsive image" class="d-block img-fluid"> -->
+                    </picture>
+                </a>
+            </div>
+            <!-- /.carousel-item -->
+            <div class="carousel-item">
+                <a href="{%url 'adopta'%}">
+                     <picture>
+                      <img src={% static '/img/fotos/ADOPTA.jpg' %} alt="responsive image" class="d-block img-fluid">
+					  <!--
+                      <source srcset="fotos/ADOPTA1.jpg" media="(min-width: 769px)">
+                       <source srcset="fotos/ADOPTA2.jpg" media="(min-width: 577px)">
+                      <img src="fotos/ADOPTA3.jpg" alt="responsive image" class="d-block img-fluid"> -->
+                    </picture>
+                </a>
+            </div>
+            <!-- /.carousel-item -->
+        </div>
+        <!-- /.carousel-inner -->
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- /.carousel -->
+</section>			
+<section><!-- Fotos promocion-->
+		<br>
+	   	<h1> OFERTAS </h1>
+		<div class="row justify-content-center">
+			<a href="AlimentoAdultoDog.html">	
+				<img src={% static '/img/fotos/PROMO_1.png' %} width="508" height="460" alt="">
+			</a>
+			<a href="AlimentoGatito.html">	
+				<img src={% static '/img/fotos/promo2.png' %} width="508" height="460" alt="">
+			</a>
+		</div>	
+		
+		<br><br>
+	   	<h1> NUEVOS PRODUCTOS! </h1>
+		<div class="row justify-content-center">
+			<a href="AccesorioGato.html">	
+				<img src={% static '/img/fotos/promo3.png' %} width="508" height="460" alt="">
+			</a>
+			<a href="AccesorioPerro.html">	
+				<img src={% static '/img/fotos/promo4.png' %} width="508" height="460" alt="">
+			</a>
+		</div>
+		<div class="row justify-content-center">
+			<a href="AccesorioPerro.html">	
+				<img src={% static '/img/fotos/promo5.png' %} width="508" height="460" alt="">
+			</a>
+			<a href="AccesorioPerro.html">	
+				<img src={% static '/img/fotos/promo6.png' %} width="508" height="460" alt="">
+			</a>
+		</div>
+		 <br>
+</section>	 
+{% endblock %}

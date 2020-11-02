@@ -1,0 +1,180 @@
+{% load static %}
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>JoJu - PetShop</title>
+		<link rel="icon" type="image/png" href={% static 'img/fotos/Icon.png' %}>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="{% static 'css/iconos.css' %}">
+		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+		<script src="https://kit.fontawesome.com/a2c5e64981.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">	
+		<link rel="stylesheet" href="{% static 'css/Estilosindex.css' %}">
+		<link rel="stylesheet" href="{% static 'css/EstiloCompra.css' %}">
+		<link rel="stylesheet" href="{% static 'css/Estilos.css' %}">
+		<link rel="stylesheet" href="{% static 'css/Galeria.css' %}">
+		<link rel="stylesheet" href="{% static 'js/script.js' %}">
+		<link rel="stylesheet" href="{% static 'js/script2.js' %}">
+		<link rel="stylesheet" href="{% static 'js/script3.js' %}">
+		<link rel="stylesheet" href="{% static 'js/validaciones.js' %}">
+	</head>
+	<body>
+<section><!-- Icono de canasta como boton-->
+		<div class="patitas")>
+		<br>
+			<div class="row">
+				<div class="offset-5">
+					<a href="{%url 'inicio'%}">	
+						<img src={% static 'img/fotos/logo.png' %} width="200" height="100" alt="">
+					</a>
+				</div>
+				<div class="col-1 offset-sm-2 offset-lg-3">
+				   <a href="{%url 'log'%}" target="_blank" class="carrito btn btn-outline-info" title="Iniciar Sesión"> 
+						<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+						</svg>
+					</a>
+					<button type="button" class="carrito btn btn-outline-info" title="Carrito de Compras"> 
+						<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-basket2-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1z"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		<br>
+		</div>
+</section>	
+<section><!-- Menú pulento -->
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-md navbar-light" style="background: #FEC45F;">
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				  <li class="nav-item active">
+					<a class="nav-link" href="{%url 'inicio'%}">Inicio<span class="sr-only">(current)</span></a>
+				  </li>
+				  <li class="nav-item dropdown offset-2 offset-md-1">
+					<a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Gatos		
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="{%url 'adultocat'%}">Alimento Adulto</a>
+					  <a class="dropdown-item" href="{%url 'gatitocat'%}">Alimento Gatito</a>
+					  <a class="dropdown-item" href="{%url 'accesocat'%}">Accesorios y más</a>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown offset-2 offset-md-1">
+					<a class="nav-link dropdown-toggle"  id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Perros
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					  <a class="dropdown-item" href="{%url 'adultodog'%}">Alimento Adulto</a>
+					  <a class="dropdown-item" href="{%url 'cachorrodog'%}">Alimento Cachorro</a>
+					  <a class="dropdown-item" href="{%url 'accesodog'%}">Accesorios y más</a>
+					</div>
+				  </li>
+				  <li class="nav-item active offset-2 offset-md-1">
+					<a class="nav-link" href="{%url 'adopta'%}">Adopción<span class="sr-only">(current)</span></a>
+				  </li>
+				  <li class="nav-item active offset-2 offset-md-1">
+					<a class="nav-link" href="{%url 'nosotro'%}">Nosotros<span class="sr-only">(current)</span></a>
+				  </li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+				  <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+				  	<button class="btn btn-outline-dark" type="submit">
+						<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+							<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+						</svg>
+					</button>
+				</form>
+			  </div>
+			</nav>
+			{% block contenido%}
+			
+			{% endblock %}
+		</div>
+</section>
+
+<section><!-- Pie de pagina -->		
+		<footer class="fondo page-footer font-small pt-4">
+		  <!-- Footer Links -->
+		  <div class="container-fluid text-center text-md-left">
+			<!-- Grid row -->
+			<div class="row">
+			  <!-- Grid column -->
+			  <div class="col-md-3 mt-md-0 mt-3 offset-1">
+				<h5 class="text-uppercase">Contactanos</h5>
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="suc bi bi-telephone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
+					</svg>
+					<a class="suc" >+56 9 8349 0960</a>
+					<br>
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="suc bi bi-telephone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
+					</svg>
+					<a class="suc" >(2) 2533 5981</a>
+					<br>
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="suc bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+					</svg>
+					<a class="suc" target="_blank" href="https://gsuite.google.com/intl/es-419/products/gmail/?utm_source=google&utm_medium=cpc&utm_campaign=latam-CL-all-es-dr-bkws-all-all-trial-e-latam-1009103-LUAC0007562-gmail&utm_content=text-ad-none-none-DEV_c-CRE_423865400847-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA%20%7C%20Gmail-KWID_43700035906221447-kwd-329871267-userloc_1003319&utm_term=KW_gmail-ST_gmail&gclid=Cj0KCQjwtZH7BRDzARIsAGjbK2ar5MVk8HhOAJ9YmQEK7afISG9fxWYKyH5bepRJGeL058ROyFPMMqUaAuR7EALw_wcB&gclsrc=aw.ds">
+					petshop@joju.cl</a>
+			  </div>
+			  <!-- Grid column -->
+			  <hr class="clearfix w-100 d-md-none pb-3">
+
+			  <!-- Grid column -->
+			  <div class="col-md-4 mb-md-0 mb-3">
+				<h5 class="text-uppercase">Sucursales</h5>
+				<ul class="list-unstyled">
+				  <li>
+				  	<svg width="1em" height="1em" viewBox="0 0 16 16" class="suc bi bi-geo-alt-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+					</svg>
+					<a class="suc" target="_blank" href="https://www.google.cl/maps/place/Pet+Shop+-+Colitas+Felices/@-33.5067739,-70.6736296,15z/data=!3m1!4b1!4m5!3m4!1s0x9662dad9383b7b59:0xbe555fb97ce3db96!8m2!3d-33.5067921!4d-70.6648963">
+					Av. Cuarta Transversal #5983, San Miguel</a>
+				  </li>
+				  <li>
+				  	<svg width="1em" height="1em" viewBox="0 0 16 16" class="suc bi bi-geo-alt-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+					</svg>
+					<a class="suc" target="_blank" href="https://www.google.com/maps/place/Tree+Pet+Store/@-33.452056,-70.5570497,17z/data=!3m1!4b1!4m5!3m4!1s0x9662ce3f5fb9061d:0xaf83a33c4d5b6b5f!8m2!3d-33.452056!4d-70.554861">
+					Av. Alcalde Fernando Castillo Velasco #7059, La Reina</a>
+				  </li>
+				  <li>
+				  	<svg width="1em" height="1em" viewBox="0 0 16 16" class="suc bi bi-geo-alt-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+					</svg>
+					<a class="suc" target="_blank" href="https://www.google.com/maps/search/pet+shop+cerca+de+Maip%C3%BA/@-33.5119293,-71.1138228,10z">
+					Av. Cuatro Poniente #948, Maipú</a>
+				  </li>
+				</ul>
+			  </div>
+		<!-- Grid column -->
+		  <div class="col-md-3 mb-md-0 mb-3">
+			<h5 class="text-uppercase">Redes sociales</h5>
+		<!--Iconos de redes 2-->
+			<div class="redescon2 offset-0">
+				<ul>
+					<li><a href="https://www.facebook.com/" target="_blank" class="facebook2"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="https://www.instagram.com/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="https://twitter.com/?lang=es" target="_blank" class="twitter2"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="https://www.pinterest.cl/" target="_blank" class="pinterest"><i class="fab fa-pinterest-p"></i></a></li>
+				</ul>
+			</div>				
+		  </div>
+		</div>
+	  </div>
+	  <div class="footer-text text-center py-3">Autores: Junisses Campos - Joaquín Perez</div>
+	</footer>
+	<!-- -->
+</section>
+	</body>
+</html>

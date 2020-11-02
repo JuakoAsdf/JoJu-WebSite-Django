@@ -1,0 +1,49 @@
+body {
+	background-color: #FFF8E7;
+	}
+
+h1{
+	color: green;
+	text-align:center;	
+	font-family: Georgia;  
+	text-decoration:  underline overline;
+}
+.patitas{
+	background-image: url("fotos/fondo.jpg");
+}
+.fondo {
+	background-color: #4B3621;
+	clear: both;
+}
+h5 {
+	color: #FEC45F;
+	font-weight: 100;
+	font-family: fantasy;
+}
+.collapse{
+	color: white;
+}
+.suc {
+	color:white;
+}
+.footer-text {
+	color: #FEC45F;
+}
+.carrito {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 2%;
+    border:2px solid #fff;
+	text-decoration: none;
+}
+.carousel {
+  background:#FFF8E7;
+}
+.carousel-item .img-fluid {
+  width:100%;
+}
+.carousel-item a {
+  display: block;
+  width:100%;
+}

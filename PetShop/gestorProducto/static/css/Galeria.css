@@ -1,0 +1,114 @@
+.card{
+	width: 306px;
+	margin: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0px 1px 10px rgba(0,0,0,.2);
+	cursor: default;
+	transition: all 400ms ease;
+	text-align: center;
+}
+.card:hover{
+	box-shadow: 5px 5px 20px rgba(0,0,0,.4);
+	transform: translateY(-3%) scale(1.05);
+}
+
+.card .contenido{
+	padding: 15px;
+	text-align: center;
+}
+.card .contenido p{
+	line-height: 1.5;
+	color: #6a6a6a;
+}
+.card .contenido p{
+	
+	line-height: 1.5;
+	color: #6a6a6a;
+}
+
+h3{
+	font-family: fantasy;
+}
+
+.galeria {
+	width: 90%;
+	margin: auto;
+	list-style: none;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.galeria img{
+	width: 210px;
+	height: 180px;
+	margin: 1rem;
+}
+
+.foto {
+	display: none;
+}
+
+.foto:target {
+	display: block;
+	position: fixed;
+	background: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.foto h3 {
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	margin: 15px 0;
+}
+
+.imagen {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imagen a {
+	color: white;
+	font-size: 40px;
+	text-decoration: none;
+	margin: 0 10px;
+}	
+
+.imagen a:nth-child(2) {
+	margin: 0;
+	height: 100%;
+	flex-shrink: 2;
+}	
+
+.imagen img {
+	width: 500px;
+	height: 100%;
+	max-width: 100%;
+	border: 7px;
+	box-sizing: border-box;
+}	
+
+.cerrar {
+	display: block;
+	width: 25px;
+	height: 25px;
+	margin: 15px auto;
+	text-align: center;
+	text-decoration: none;
+	font-size: 25px;
+	color: white;
+	padding: 5px;
+	border-radius: 50%;
+	line-height: 25px;
+}
