@@ -1,2 +1,2 @@
 # JoJu-WebSite-Django
-El sitio web con django
+El sitio web con django V1
