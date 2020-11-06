@@ -3,6 +3,7 @@ from .models import Marca
 from .models import Categoria
 from .models import Sucursal
 from .models import Producto
+from .models import Adopcion
 # Register your models here.
 
 class productoAdmin(admin.ModelAdmin):
@@ -38,3 +39,5 @@ class sucursalAdmin(admin.ModelAdmin):
     search_fields       = ['nombre',
                            'direccion']  
 admin.site.register(Sucursal, sucursalAdmin)
+
+admin.site.register(Adopcion)
