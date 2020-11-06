@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
+from django.shortcuts import redirect
+from django.conf import settings
 # Create your views here.
 
 def inicio(request):
@@ -27,6 +31,12 @@ def adopcion(request):
     
 def nosotros(request):
     return render(request,'nosotros.html', {})
-    
-def login(request):
+
+def login(request):    
+    if request.method == "POST":
+        nombre = request.POST["txtUsuario"]
+        correo  = request.POST["txtCorreo"]    
+        clave  = request.POST["txtClave"]
+        User.objects.create(username=nombre, email=correo, password=make_password(clave))
+        #return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
     return render(request,'login.html', {})

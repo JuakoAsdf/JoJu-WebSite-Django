@@ -13,7 +13,6 @@
 		<title>JoJu - Login</title>
 		<link rel="stylesheet" href="{% static 'css/Estilos.css' %}">
 		<link rel="stylesheet" href="{% static 'css/Estiloslogin.css' %}">
-		<link rel="stylesheet" href="{% static 'js/script.js' %}">
 		<link rel="stylesheet" href="{% static 'js/validaciones.js' %}">
 </head>
 <section><!--Contenedor de todo-->
@@ -37,6 +36,7 @@
 				<!--login-->
 				<form class="formulario_login" method="post">
 					<h2>Iniciar Sesión</h2>
+					{% csrf_token %}
 					<input title="Formato: ejemplo@joju.cl" type="email" placeholder="Correo Electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required >
 					<input title="Debe ingresar por lo menos una mayúscula una letra y un numero y debe ser como minimo 8 carácteres" type="password" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
 					<h3>¿Se te olvidó la contraseña?</h3>
@@ -45,18 +45,19 @@
 				<!--registro-->
 				<form class="formulario_register" method="post">
 					<h2>Registrarse</h2>
+					{% csrf_token %}
 					<div class="row">
 						<input title="Formato: Nombre Apellido" type="tel" name="txtNombre" class="txtNombre" placeholder="Nombre Completo" pattern="[A-Za-z]+ [A-Za-z]{2,}" required>
 					</div>
 					<div class="row">
-						<input title="Formato: ejemplo@joju.cl" type="email" placeholder="Correo Electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+						<input title="Formato: ejemplo@joju.cl" type="email" name="txtCorreo" class="txtCorreo" placeholder="Correo Electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 					</div>
 					<div class="row">
-						<input type="text" placeholder="Usuario" maxlength="10" 
+						<input type="text" placeholder="Usuario" maxlength="10" name="txtUsuario" class="txtUsuario"
 						required>
 					</div>
 					<div class="row">
-						<input title="Debe ingresar por lo menos una mayúscula una letra y un numero y debe ser como minimo 8 carácteres" type="password" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="15" required>
+						<input title="Debe ingresar por lo menos una mayúscula una letra y un numero y debe ser como minimo 8 carácteres" name="txtClave" class="txtClave" type="password" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="15" required>
 					</div>
 					<div class="row">
 						<input title="Formato: 1234567890, Sólo Números" type="tel" placeholder="Telefono" maxlength="9" pattern="[0-9]{9}" required>
