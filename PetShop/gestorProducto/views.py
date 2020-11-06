@@ -1,12 +1,9 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import redirect
 from django.conf import settings
-=======
 from gestorProducto.models import Adopcion
->>>>>>> f92c6f1a08bc5714a22a50b6f33aff74cd14e9de
 # Create your views here.
 
 def inicio(request):
