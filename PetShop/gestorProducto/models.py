@@ -4,14 +4,14 @@ from django.db import models
 class Marca(models.Model):
     nombre        = models.TextField(max_length=50)
 
-    def str(self):
+    def __str__(self):
         return self.nombre
 
 class Categoria(models.Model):
     nombre        = models.TextField(max_length=50)
     activo        = models.BooleanField()
 
-    def str(self):
+    def __str__(self):
         return self.nombre
 
 class Sucursal(models.Model):
@@ -20,7 +20,7 @@ class Sucursal(models.Model):
     telefono     = models.TextField(max_length=9)
     encargado    = models.TextField(max_length=60)
 
-    def str(self):
+    def __str__(self):
         return self.nombre
 
 class Producto(models.Model):
@@ -33,7 +33,7 @@ class Producto(models.Model):
     precioCosto  = models.IntegerField()
     precioVenta  = models.IntegerField()
 
-    def str(self):
+    def __str__(self):
         return self.descripcion
 
 class Adopcion(models.Model):
@@ -41,5 +41,5 @@ class Adopcion(models.Model):
     descripcion  = models.TextField(max_length = 200)
     activo        = models.BooleanField()
 
-    def str(self):
+    def __str__(self):
         return self.nombre
