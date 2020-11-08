@@ -4,28 +4,90 @@ from django.contrib.auth.hashers import make_password
 from django.shortcuts import redirect
 from django.conf import settings
 from gestorProducto.models import Adopcion
+from gestorProducto.models import Producto
 # Create your views here.
 
 def inicio(request):
+    
     return render(request,'inicio.html', {})
     
 def alimentoadultocat(request):
-    return render(request,'alimentoadultocat.html', {})
+    lista = {}
+    
+    if request.method == "POST":
+        nombre        = request.POST["txtNombre"]
+        descripcion   = request.POST["txtDescripcion"]
+        
+        if 'btnListar' in request.POST:
+            lista = Producto.objects.filter(categoria__nombre = "Comida Gato Adulto")
+
+    contexto = {'lista' : lista}   
+    return render(request,'alimentoadultocat.html', contexto)
     
 def alimentogatito(request):
-    return render(request,'alimentogatito.html', {})
+    lista = {}
+    
+    if request.method == "POST":
+        nombre        = request.POST["txtNombre"]
+        descripcion   = request.POST["txtDescripcion"]
+        
+        if 'btnListar' in request.POST:
+            lista = Producto.objects.filter(categoria__nombre = "Comida Gatito")
+
+    contexto = {'lista' : lista}   
+    return render(request,'alimentogatito.html', contexto)
 
 def accesoriocat(request):
-    return render(request,'accesoriocat.html', {})
+    lista = {}
+    
+    if request.method == "POST":
+        nombre        = request.POST["txtNombre"]
+        descripcion   = request.POST["txtDescripcion"]
+        
+        if 'btnListar' in request.POST:
+            lista = Producto.objects.filter(categoria__nombre = "Accesorios Gatos")
+
+    contexto = {'lista' : lista}  
+    return render(request,'accesoriocat.html', contexto)
     
 def alimentoadultodog(request):
-    return render(request,'alimentoadultodog.html', {})
+    lista = {}
+    
+    if request.method == "POST":
+        nombre        = request.POST["txtNombre"]
+        descripcion   = request.POST["txtDescripcion"]
+        
+        if 'btnListar' in request.POST:
+            lista = Producto.objects.filter(categoria__nombre = "Comida Perro Adulto")
+
+    contexto = {'lista' : lista}   
+    return render(request,'alimentoadultodog.html', contexto)
 
 def alimentocachorro(request):
-    return render(request,'alimentocachorro.html', {})
+    lista = {}
+    
+    if request.method == "POST":
+        nombre        = request.POST["txtNombre"]
+        descripcion   = request.POST["txtDescripcion"]
+        
+        if 'btnListar' in request.POST:
+            lista = Producto.objects.filter(categoria__nombre = "Comida Cachorrito")
+
+    contexto = {'lista' : lista}  
+    return render(request,'alimentocachorro.html', contexto)
 
 def accesoriodog(request):
-    return render(request,'accesoriodog.html', {})
+    lista = {}
+    
+    if request.method == "POST":
+        nombre        = request.POST["txtNombre"]
+        descripcion   = request.POST["txtDescripcion"]
+        
+        if 'btnListar' in request.POST:
+            lista = Producto.objects.filter(categoria__nombre = "Accesorios Perros")
+
+    contexto = {'lista' : lista} 
+    return render(request,'accesoriodog.html', contexto)
     
 def adopcion(request):
     mensaje = "";

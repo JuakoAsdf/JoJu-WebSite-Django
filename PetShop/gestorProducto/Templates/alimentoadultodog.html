@@ -1,219 +1,47 @@
 {% extends "index.html"%}
+
 {% block contenido%}
-<section><!-- Productos -->	
-		<br>
-		<div class="row justify-content-center" id="descripcion">
-			<!-- Ofertas -->
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/DogChow1.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Dog Chow adulto mini</h5>
-				<p id="antes" class="row justify-content-center">$19.900</p>
-				<p id="oferta" class="row justify-content-center">OFERTA $16.900</p>
-				<button type="button" id="producto1" class="btn btn-warning">Agregar al Carrito</button>
-				<p>Equilibra la flora intestinal. Prebiótico natural  
-				Promueve un pelaje brillante. Omegas 6 y 3. 8KG</p>
-			</div>
+{{ mensaje }}
+<form action="{% url 'adultodog' %}" method="post">
+	{% csrf_token %}
+		<div>	
+			<input type="hidden" name="txtId" class="from-control" value="{{ item.id }}">
+		</div>
+
+		<div>	
+			<input type="hidden" name="txtNombre" class="from-control" value="{{ item.nombre }}">
+		</div>
+
+		<div>	
+			<input type="hidden" name="txtPrecio" class="from-control" value="{{ item.precioVenta }}">
+		</div>
+
+		<div>	
+			<input type="hidden" name="txtDescripcion" class="from-control" value="{{ item.descripcion }}">
+		</div>
 			
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/DogChow2.jpg" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Dog Chow adultos grandes</h5>
-				<p id="antes2" class="row justify-content-center">$31.400</p>
-				<p id="oferta2" class="row justify-content-center">OFERTA $26.690</p>
-				<button type="button" id="producto2" class="btn btn-warning">Agregar al Carrito</button>
-				<p>Sabor carne y pollo, alimento indicado para tu perro 
-				mejore su calidad de vida desde adentro hacia afuera. 18KG</p>
-			</div>	
+		<div>	
+			<button type="sumbit" name="btnListar" class="btn btn-light">
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-reboot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		  <path fill-rule="evenodd" d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 0 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.812 6.812 0 0 0 1.16 8zm5.48-.079V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324h-1.6zm0 3.75V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352h1.141z"/>
+		</svg></button>
+		</div>
+</form>
+{% endblock %}
 
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/DogChow3.jpg" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Dog Chow adulto R.pequeñas</h5>
-				<p id="antes3" class="row justify-content-center">$9.200</p>
-				<p id="oferta3" class="row justify-content-center">OFERTA $7.820</p>
-				<button type="button" id="producto3" class="btn btn-warning">Agregar al Carrito</button>
-				<p>Dog Chow Adulto Razas Pequeñas, carne, pollo y vegetales.
-				Alimento con fibras naturales, proteínas, prebióticos y multivitaminas. 3KG</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/DogChow4.jpg" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Dog Chow adulto longevidad</h5>
-				<p id="antes4" class="row justify-content-center">$34.500</p>
-				<p id="oferta4" class="row justify-content-center">OFERTA $29.300</p>
-				<button type="button" id="producto4" class="btn btn-warning">Agregar al Carrito</button>
-				<p>Una diesta especializada para perros Senior que tienen más de 
-				7 años. 18KG</p>
-			</div>			
-			<!-- Fin Ofertas -->
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/MasterDog.jpg" width="200" height="200" alt="">
-				<h5 class="text-uppercase">MasterDog Carne</h5>
-				<h4 class="row justify-content-center">$22.050</h4>
-				<button type="button" id="producto5" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Alimento completo y balanceado recomendado para perros adultos de todos los
-				tamaños y razas.18KG
-				</p>
-			</div>
-			
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Pedigree.jpg" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Pedigree Carne</h5>
-				<h4 class="row justify-content-center">$29.450</h4>
-				<button type="button" id="producto6" class="btn btn-warning">Agregar al Carrito</button>
-				<p> PEDIGREE® Vital Protection® Adulto, Sabor Carne, Pollo, 
-				y Cereales. Etapa 2. Nutrición Completa. 21 KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Pedigree1.jpg" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Pedigree Carne y vegetal</h5>
-				<h4 class="row justify-content-center">$30.450</h4>
-				<button type="button" id="producto7" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Pedigree Vital Protection es nutrición profesional para cada etapa de su vida, 
-				cubriendo las 4 necesidades universales. 21 KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida1.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Pro plan dog adult small breed</h5>
-				<h4 class="row justify-content-center">$14.450</h4>
-				<button type="button" id="producto8" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Triple Action provee nutrición de avanzada que ayuda a los perros
-				de razas pequeñas a mantenerse fuertes y llenos de vitalidad. 3 KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida2.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Royal canin mini adult</h5>
-				<h4 class="row justify-content-center">$10.900</h4>
-				<button type="button" id="producto9" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Alimento para perros adultos de tamaño Mini
-				(de 1 a 10 kg) desde los 10 meses hasta los 8 años. 2.5 KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida3.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">equilibrio adult</h5>
-				<h4 class="row justify-content-center">$8.500</h4>
-				<button type="button" id="producto10" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Alimento completo para perros de razas mediana en la fase adulta.
-				Perros adultos a partir de 18 meses de vida. 2.5 KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida4.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">equilibrio small breeds</h5>
-				<h4 class="row justify-content-center">$8.500</h4>
-				<button type="button" id="producto11" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Alimento completo para perros de razas pequeñas en la fase adulta.
-				Perros adultos a partir de 10 meses de vida. 2.5 KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida5.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Eukanuba adult medium</h5>
-				<h4 class="row justify-content-center">$42.500</h4>
-				<button type="button" id="producto12" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Formulado para adultos de raza mediana 
-				(de los 11 kg a los 24 kg de peso en la edad adulta) de 1 a 7 años de edad. 13.6 KG
-				</p>
-			</div>
-			
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida6.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">Eukanuba adult small</h5>
-				<h4 class="row justify-content-center">$11.500</h4>
-				<button type="button" id="producto13" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Formulado para adultos de raza pequeña 
-				(hasta 10 kg de peso en la edad adulta) de 1 a 7 años de edad.2.5 KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida7.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">NUTRA NUGGETS PERFORMANCE</h5>
-				<h4 class="row justify-content-center">$12.500</h4>
-				<button type="button" id="producto14" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Especialmente formulado para perros adultos 
-				atléticos con actividad física moderada a alta. 3KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida8.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">NUTRA NUGGETS MAINTENANCE</h5>
-				<h4 class="row justify-content-center">$12.500</h4>
-				<button type="button" id="producto15" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Especialmente formulado para perros adultos con actividad física normal
-				y de caza, perros de exhibición durante los periodos de descanso.  3KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida9.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">NUTRIENCE ORIGINAL ADULTO SMALL BREED</h5>
-				<h4 class="row justify-content-center">$12.900</h4>
-				<button type="button" id="producto16" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Dieta completa y equilibrada que se formuló
-				especialmente para perros adultos de raza pequeña.2.5KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida10.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">NUTRA GOLD INDOOR ADULT MICRO BITE</h5>
-				<h4 class="row justify-content-center">$13.500</h4>
-				<button type="button" id="producto17" class="btn btn-warning">Agregar al Carrito</button>
-				<p> Fórmula Mini Croquetas para Perros Interior.
-				Alimento completo para perros sobre 12 kgs. 3KG
-				</p>
-			</div>
-			
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida11.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">NUTRA GOLD SALMON</h5>
-				<h4 class="row justify-content-center">$13.500</h4>
-				<button type="button" id="producto18" class="btn btn-warning">Agregar al Carrito</button>
-				<p>Fórmula Salmón y Patata para Perros Adultos. Alimento completo para perros 3KG
-				</p>
-			</div>
-
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida12.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">HILLS ADULT LIGHT SMALL BITES</h5>
-				<h4 class="row justify-content-center">$15.500</h4>
-				<button type="button" id="producto19" class="btn btn-warning">Agregar al Carrito</button>
-				<p>Mantenimiento de peso. 3KG
-				</p>
-			</div>
-			
-			<div class="prod col-sm-8 col-md-4 col-lg-3 ">
-				<img src="adog/ComidaAdulto/Comida13.png" width="200" height="200" alt="">
-				<h5 class="text-uppercase">HILLS ADULT SENSITIVE STOMACH & SKIN</h5>
-				<h4 class="row justify-content-center">$50.500</h4>
-				<button type="button" id="producto20" class="btn btn-warning">Agregar al Carrito</button>
-				<p>Alimento seco para perros adultos con estómago y piel sensible. 7KG
-				</p>
-			</div>
-			<div class="overlay" id="overlay">
-				<div class="popup" id="popup">
-					<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-					<h3>Tu Articulo ha sido añadido al carrito correctamente.</h3>
-					<h4>El producto correspondiente al área "Comida de perros adultos" ha sido agregado.</h4>
-					<form>
-						<div class="contenedor-inputs">			
-						</div>
-						<input type="submit" class="btn-submit" value="Seguir comprando">
-					</form>
-				</div>
+{% block listado %}
+{% for fila in lista %}
+<div class="prod">
+	<div class ="row justify-content-center">
+		<div>	
+			<div class="table-responsive">
+							<h4>{{ fila.nombre }}</h4>
+							<p>{{ fila.precioVenta }}</p>
+							<button id="producto1" class="btn btn-warning">Agregar al Carrito</button>
+							<p>{{ fila.descripcion }}</p>
+{% endfor %}
 			</div>
 		</div>
-		<br>
-</section>
+	</div>
+</div>
 {% endblock %}

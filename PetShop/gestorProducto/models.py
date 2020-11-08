@@ -34,7 +34,7 @@ class Producto(models.Model):
     precioVenta  = models.IntegerField()
 
     def __str__(self):
-        return self.descripcion
+        return self.nombre
 
 class Adopcion(models.Model):
     nombre       = models.TextField(max_length=60)
