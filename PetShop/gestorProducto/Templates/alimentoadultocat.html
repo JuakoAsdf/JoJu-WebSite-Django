@@ -24,6 +24,7 @@
 
 {% block listado %}
 {% for fila in lista %}
+{% if forloop.first %}<div class="row">{% endif %}
 <div class="prod">
 	<div class ="row justify-content-center">
 		<div>	
@@ -32,9 +33,12 @@
 							<p>{{ fila.precioVenta }}</p>
 							<button id="producto1" class="btn btn-warning">Agregar al Carrito</button>
 							<p>{{ fila.descripcion }}</p>
-{% endfor %}
 			</div>
 		</div>
 	</div>
-</div>
+</div>						
+	{% if forloop.counter|divisibleby:34 %}</div><div class="row">{% endif %}
+	{% if forloop.last %}</div>{% endif %}
+{% endfor %}
+
 {% endblock %}

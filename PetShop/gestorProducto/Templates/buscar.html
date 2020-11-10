@@ -10,6 +10,7 @@
 	<h2> Resultado de búsqueda </h2>
 </div>
 {% for mostrar in item %}
+{% if forloop.first %}<div class="row">{% endif %}
 <div class="prod">
 	<div class ="row justify-content-center">
 		<div>	
@@ -18,16 +19,12 @@
 							<p>{{ mostrar.precioVenta }}</p>
 							<button id="producto1" class="btn btn-warning">Agregar al Carrito</button>
 							<p>{{ mostrar.descripcion }}</p>
-{% endfor %}
-
-{% for mostrar in desc %}
-<div class="prod">
-	<div class ="row justify-content-center">
-		<div>	
-			<div class="table-responsive">
-							<h4>{{ mostrar.nombre }}</h4>
-							<p>{{ mostrar.precioVenta }}</p>
-							<button id="producto1" class="btn btn-warning">Agregar al Carrito</button>
-							<p>{{ mostrar.descripcion }}</p>
+			</div>	
+		</div>	
+	</div>	
+</div>
+	{% if forloop.counter|divisibleby:34 %}</div><div class="row">{% endif %}
+	{% if forloop.last %}</div>{% endif %}											
 {% endfor %}
 {% endblock %}
+

@@ -12,16 +12,15 @@ def inicio(request):
                   
 def buscar(request):
     item = {}
-    desc = {}
     
     if request.method == "POST":
         buscar = request.POST['txtBuscar']
         
         if 'txtBuscar' in request.POST:
-            item = Producto.objects.filter(nombre__contains = buscar)
-            desc = Producto.objects.filter(descripcion__contains = buscar)
+            item = Producto.objects.filter(nombre__contains = buscar,
+                                          descripcion__contains = buscar)
         
-    return render(request,'buscar.html', {'item': item, 'desc':desc})
+    return render(request,'buscar.html', {'item': item})
     
 def alimentoadultocat(request):
     lista = Producto.objects.filter(categoria__nombre = "Comida Gato Adulto")
