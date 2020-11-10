@@ -8,84 +8,48 @@ from gestorProducto.models import Producto
 # Create your views here.
 
 def inicio(request):
-    
     return render(request,'inicio.html', {})
-    
-def alimentoadultocat(request):
-    lista = {}
+                  
+def buscar(request):
+    item = {}
+    desc = {}
     
     if request.method == "POST":
-        nombre        = request.POST["txtNombre"]
-        descripcion   = request.POST["txtDescripcion"]
+        buscar = request.POST['txtBuscar']
         
-        if 'btnListar' in request.POST:
-            lista = Producto.objects.filter(categoria__nombre = "Comida Gato Adulto")
-
+        if 'txtBuscar' in request.POST:
+            item = Producto.objects.filter(nombre__contains = buscar)
+            desc = Producto.objects.filter(descripcion__contains = buscar)
+        
+    return render(request,'buscar.html', {'item': item, 'desc':desc})
+    
+def alimentoadultocat(request):
+    lista = Producto.objects.filter(categoria__nombre = "Comida Gato Adulto")
     contexto = {'lista' : lista}   
     return render(request,'alimentoadultocat.html', contexto)
     
 def alimentogatito(request):
-    lista = {}
-    
-    if request.method == "POST":
-        nombre        = request.POST["txtNombre"]
-        descripcion   = request.POST["txtDescripcion"]
-        
-        if 'btnListar' in request.POST:
-            lista = Producto.objects.filter(categoria__nombre = "Comida Gatito")
-
+    lista = Producto.objects.filter(categoria__nombre = "Comida Gatito")
     contexto = {'lista' : lista}   
     return render(request,'alimentogatito.html', contexto)
 
 def accesoriocat(request):
-    lista = {}
-    
-    if request.method == "POST":
-        nombre        = request.POST["txtNombre"]
-        descripcion   = request.POST["txtDescripcion"]
-        
-        if 'btnListar' in request.POST:
-            lista = Producto.objects.filter(categoria__nombre = "Accesorios Gatos")
-
+    lista = Producto.objects.filter(categoria__nombre = "Accesorios Gatos")
     contexto = {'lista' : lista}  
     return render(request,'accesoriocat.html', contexto)
     
 def alimentoadultodog(request):
-    lista = {}
-    
-    if request.method == "POST":
-        nombre        = request.POST["txtNombre"]
-        descripcion   = request.POST["txtDescripcion"]
-        
-        if 'btnListar' in request.POST:
-            lista = Producto.objects.filter(categoria__nombre = "Comida Perro Adulto")
-
+    lista = Producto.objects.filter(categoria__nombre = "Comida Perro Adulto")
     contexto = {'lista' : lista}   
     return render(request,'alimentoadultodog.html', contexto)
 
 def alimentocachorro(request):
-    lista = {}
-    
-    if request.method == "POST":
-        nombre        = request.POST["txtNombre"]
-        descripcion   = request.POST["txtDescripcion"]
-        
-        if 'btnListar' in request.POST:
-            lista = Producto.objects.filter(categoria__nombre = "Comida Cachorrito")
-
+    lista = Producto.objects.filter(categoria__nombre = "Comida Cachorrito")
     contexto = {'lista' : lista}  
     return render(request,'alimentocachorro.html', contexto)
 
 def accesoriodog(request):
-    lista = {}
-    
-    if request.method == "POST":
-        nombre        = request.POST["txtNombre"]
-        descripcion   = request.POST["txtDescripcion"]
-        
-        if 'btnListar' in request.POST:
-            lista = Producto.objects.filter(categoria__nombre = "Accesorios Perros")
-
+    lista = Producto.objects.filter(categoria__nombre = "Accesorios Perros")
     contexto = {'lista' : lista} 
     return render(request,'accesoriodog.html', contexto)
     
@@ -98,7 +62,7 @@ def adopcion(request):
         id            = int("0" + request.POST["txtId"])
         nombre        = request.POST["txtNombre"]
         descripcion   = request.POST["txtDescripcion"]
-        activo        = request.POST.get("chkActivo") is "1" 
+        activo        = request.POST.get("chkActivo") == "1" 
         
         if 'btnGrabar' in request.POST:
         

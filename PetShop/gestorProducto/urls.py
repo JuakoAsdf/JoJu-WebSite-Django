@@ -13,4 +13,5 @@ urlpatterns = [
     path('adopta',views.adopcion, name='adopta'),
     path('nosotro',views.nosotros, name='nosotro'),
     path('log',views.login, name='log'),
+    path('buscar',views.buscar, name='buscar'),
 ]
