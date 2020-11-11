@@ -1,7 +1,11 @@
 {% extends "index.html"%}
 
-{% block contenido%}
-{{ mensaje }}
+{% load static %}
+{% block contenido %}
+<head>
+	<link rel="stylesheet" href="{% static 'css/EstiloCompra.css' %}">
+</head>
+
 <form action="{% url 'adultodog' %}" method="post">
 	{% csrf_token %}
 		<div>	
@@ -29,11 +33,11 @@
 	<div class ="row justify-content-center">
 		<div>	
 			<div class="table-responsive">
-							<img src="{{ fila.imagen.url }}">
+							<img id="foto" src="{{ fila.imagen.url }}">
 							<h3 style="color:brown">{{ fila.nombre }}</h3>
 							<h4>${{ fila.precioVenta }}</h4>
 							<button id="producto" class="btn btn-warning">Agregar al Carrito</button>
-							<p>{{ fila.descripcion }}</p>
+							<p id="espacio">{{ fila.descripcion }}</p>
 			</div>
 		</div>
 	</div>

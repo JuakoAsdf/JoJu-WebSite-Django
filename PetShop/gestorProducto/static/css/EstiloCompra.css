@@ -2,6 +2,17 @@ h4 {
 	color:green;
 }
 
+#foto {
+	height : 200;
+	width : 200;
+}
+
+#espacio {
+	margin-right: 1rem;
+	margin-left: 1rem;
+	text-align: center;
+}
+
 #antes{
 	color:#F8C471;
 }
