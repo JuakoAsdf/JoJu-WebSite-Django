@@ -19,15 +19,17 @@ def inicio(request):
                   
 def buscar(request):
     item = {}
+    desc = {}
     
     if request.method == "POST":
         buscar = request.POST['txtBuscar']
         
         if 'txtBuscar' in request.POST:
-            item = Producto.objects.filter(nombre__contains = buscar,
-                                          descripcion__contains = buscar)
-        
-    return render(request,'buscar.html', {'item': item})
+            item = Producto.objects.filter(nombre__contains = buscar)
+            desc = Producto.objects.filter(descripcion__contains = buscar)
+           
+
+    return render(request,'buscar.html', {'item': item, 'desc':desc})
     
 def alimentoadultocat(request):
     lista = Producto.objects.filter(categoria__nombre = "Comida Gato Adulto")
@@ -60,50 +62,8 @@ def accesoriodog(request):
     return render(request,'accesoriodog.html', contexto)
     
 def adopcion(request):
-    mensaje = "";
-    lista = {}
-    item = {}
-    
-    if request.method == "POST":
-        id            = int("0" + request.POST["txtId"])
-        nombre        = request.POST["txtNombre"]
-        descripcion   = request.POST["txtDescripcion"]
-        activo        = request.POST.get("chkActivo") == "1" 
-        
-        if 'btnGrabar' in request.POST:
-        
-            if id < 1: 
-                Adopcion.objects.create(nombre = nombre, descripcion = descripcion, activo = activo) #registra los datos
-            else:
-                item = Adopcion.objects.get(pk = id)
-                item.nombre = nombre
-                item.descripcion = descripcion
-                item.activo = activo
-                item.save() #guarda los cambios
-                item = {}
-            
-            mensaje = "Datos guardados"
-
-        elif 'btnBuscar' in request.POST:
-            try:
-                item = Adopcion.objects.get(pk = id) 
-            except:
-                mensaje = "Registro no encontrado"
-                item = {}
-                
-             
-        elif 'btnListar' in request.POST:
-            lista = Adopcion.objects.all()
-        
-        elif 'btnEliminar' in request.POST:
-            item = Adopcion.objects.get(pk = id) #obtiene el registro segun id
-            
-            if isinstance(item, Adopcion):
-                item.delete()
-                mensaje = "Registro eliminado"
-                item = {}
-                
-    contexto = {'mensaje' : mensaje, 'lista' : lista, 'item' : item}
+    lista = Adopcion.objects.all()
+    contexto = {'lista' : lista}
     return render(request,'adopcion.html', contexto)
     
 def nosotros(request):
