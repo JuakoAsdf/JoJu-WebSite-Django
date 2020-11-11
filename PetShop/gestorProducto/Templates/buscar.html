@@ -15,6 +15,7 @@
 	<div class ="row justify-content-center">
 		<div>	
 			<div class="table-responsive">
+							<img src="{{ mostrar.imagen.url }}">
 							<h4>{{ mostrar.nombre }}</h4>
 							<p>{{ mostrar.precioVenta }}</p>
 							<button id="producto1" class="btn btn-warning">Agregar al Carrito</button>
@@ -26,5 +27,7 @@
 	{% if forloop.counter|divisibleby:34 %}</div><div class="row">{% endif %}
 	{% if forloop.last %}</div>{% endif %}											
 {% endfor %}
+
+
 {% endblock %}
 

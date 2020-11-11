@@ -27,6 +27,7 @@ class Producto(models.Model):
     marca        = models.ForeignKey(Marca, blank=True, null=True, on_delete=models.SET_NULL)
     categoria    = models.ForeignKey(Categoria, blank=True, null=True, on_delete=models.SET_NULL)
     nombre       = models.TextField(max_length=60)
+    imagen       = models.ImageField('Foto', upload_to='producto/', null=True, blank=True)
     codigo       = models.DecimalField(max_digits=13, decimal_places=0)
     descripcion  = models.TextField(max_length = 200)
     stock        = models.IntegerField()
@@ -37,9 +38,9 @@ class Producto(models.Model):
         return self.nombre
 
 class Adopcion(models.Model):
-    nombre       = models.TextField(max_length=60)
-    descripcion  = models.TextField(max_length = 200)
-    activo        = models.BooleanField()
+    nombre        = models.TextField(max_length=60)
+    descripcion   = models.TextField(max_length = 200)
+    imagen        = models.ImageField('Imagen', upload_to='adopta/', null=True, blank=True)
 
     def __str__(self):
         return self.nombre
