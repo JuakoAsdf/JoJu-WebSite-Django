@@ -5,8 +5,15 @@ from django.shortcuts import redirect
 from django.conf import settings
 from gestorProducto.models import Adopcion
 from gestorProducto.models import Producto
+from django.contrib.auth import authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login as do_login
+from django.contrib.auth import logout as do_logout
 # Create your views here.
 
+def logout(request):
+    return redirect('')
+    
 def inicio(request):
     return render(request,'inicio.html', {})
                   
@@ -62,11 +69,28 @@ def adopcion(request):
 def nosotros(request):
     return render(request,'nosotros.html', {})
 
-def login(request):    
+def loginPage(request):
+    form = AuthenticationForm()
+    if request.method == "POST":
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            nombre = form.cleaned_data['username']
+            clave = form.cleaned_data['password']                
+            user = authenticate(username=nombre, password=clave)
+            
+            if user is not None:
+                do_login(request, user)
+                return redirect('inicio')    
+    return render(request,'loginn.html', {'form':form})
+    
+def registerPage(request):
     if request.method == "POST":
         nombre = request.POST["txtUsuario"]
         correo  = request.POST["txtCorreo"]    
         clave  = request.POST["txtClave"]
         User.objects.create(username=nombre, email=correo, password=make_password(clave))
         #return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
-    return render(request,'login.html', {})
+    return render(request,'register.html', {})
+    
+
+    

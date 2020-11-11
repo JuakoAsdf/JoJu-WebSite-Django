@@ -29,8 +29,9 @@
 					<a href="{%url 'inicio'%}">	
 						<img src={% static 'img/fotos/logo.png' %} width="200" height="100" alt="">
 					</a>
-				</div>
+				</div>				
 				<div class="col-1 offset-sm-2 offset-lg-3">
+				Bienvenido<b>  {{request.user.username}}</b>
 				   <a href="{%url 'log'%}" target="_blank" class="carrito btn btn-outline-info" title="Iniciar Sesión"> 
 						<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -82,7 +83,7 @@
 				  </li>
 				  <li class="nav-item active offset-2 offset-md-1">
 					<a class="nav-link" href="{%url 'nosotro'%}">Nosotros<span class="sr-only">(current)</span></a>
-				  </li>
+				  </li>				  
 				</ul>
 <!-- Función Buscar -->
 				<form class="form-inline my-2 my-lg-0" method="post" action="{% url 'buscar' %}">
