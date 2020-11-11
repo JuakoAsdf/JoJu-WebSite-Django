@@ -16,12 +16,7 @@ urlpatterns = [
     path('nosotro',views.nosotros, name='nosotro'),
     path('log',views.loginPage, name='log'),
     path('buscar',views.buscar, name='buscar'),
-<<<<<<< HEAD
     path('regis',views.registerPage, name='regis'),
     path('logout', views.logout, name='logout'),
-]
-
-=======
-    
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
->>>>>>> 1e9e3d29f208ae4cce7c03b6a776119185f59bf0
+

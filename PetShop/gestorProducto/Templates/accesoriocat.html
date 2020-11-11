@@ -30,15 +30,14 @@
 {% for fila in lista %}
 {% if forloop.first %}<div class="row">{% endif %}
 <div class ="row justify-content-center" id="descripcion">
-	<div class="col-6">
+	<div class="col-sm-2 col-lg-3 ">
 		<div class="prod">	
-			<div class="table-responsive">
 							<img id="foto" src="{{ fila.imagen.url }}">
 							<h3 style="color:brown">{{ fila.nombre }}</h3>
 							<h4>${{ fila.precioVenta }}</h4>
 							<button id="producto" class="btn btn-warning">Agregar al Carrito</button>
 							<p id="espacio">{{ fila.descripcion }}</p>
-			</div>
+			
 		</div>
 	</div>
 </div>
