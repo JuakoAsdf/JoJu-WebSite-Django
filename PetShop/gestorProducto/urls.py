@@ -12,6 +12,9 @@ urlpatterns = [
     path('accesodog',views.accesoriodog, name='accesodog'),
     path('adopta',views.adopcion, name='adopta'),
     path('nosotro',views.nosotros, name='nosotro'),
-    path('log',views.login, name='log'),
+    path('log',views.loginPage, name='log'),
     path('buscar',views.buscar, name='buscar'),
+    path('regis',views.registerPage, name='regis'),
+    path('logout', views.logout, name='logout'),
 ]
+
