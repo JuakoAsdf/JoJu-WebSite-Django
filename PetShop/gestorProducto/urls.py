@@ -1,7 +1,12 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import ProductoViewSet
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('productos', ProductoViewSet)
 
 urlpatterns = [
     path('',views.inicio, name='inicio'),
@@ -18,5 +23,6 @@ urlpatterns = [
     path('buscar',views.buscar, name='buscar'),
     path('regis',views.registerPage, name='regis'),
     path('logout', views.logout, name='logout'),
+    path('api/',  include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
