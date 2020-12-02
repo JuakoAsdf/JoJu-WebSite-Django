@@ -3,39 +3,39 @@
   "short_name": "Joju Petshop",
   "icons": [
     {
-      "src": "/IconosPWA/logo48x48.png",
+      "src": "/static/Iconos PWA/logo48x48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "/IconosPWA/logo144x144.png",
+      "src": "/static/Iconos PWA/logo144x144.png",
       "type": "image/png",
       "sizes": "144x144"
     },
     {
-      "src": "/IconosPWA/logo192x192.png",
+      "src": "/static/Iconos PWA/logo192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/IconosPWA/logo256x256.png",
+      "src": "/static/Iconos PWA/logo256x256.png",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "/IconosPWA/logo384x384.png",
+      "src": "/static/Iconos PWA/logo384x384.png",
       "type": "image/png",
       "sizes": "384x384"
     },
     {
-      "src": "/IconosPWA/logo512x512.png",
+      "src": "/static/Iconos PWA/logo512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/gestorProducto/Templates/index.html",
+  "start_url": "/inicio",
   "display": "standalone",
-  "background_color": "#af332e",
-  "theme_color": "#ee0979",
+  "background_color": "#FFF8E7",
+  "theme_color": "#000000",
   "description": "Testeando PWA"
 }
