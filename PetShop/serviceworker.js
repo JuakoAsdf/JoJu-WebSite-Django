@@ -3,6 +3,9 @@ var urlsToCache = [
     '/',
     '/static/css/estilos.css',
     '/static/img/fotos/logo.png',
+	'/static/css/EstiloCompra.css',
+	'/static/css/Estilosindex.css',
+	'/static/css/estilos.css',
 ];
 
 self.addEventListener('install', function(event) {

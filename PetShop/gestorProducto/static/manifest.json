@@ -1,0 +1,41 @@
+{
+  "name": "JoJu Website",
+  "short_name": "JoJu PetShop",
+  "icons": [
+    {
+      "src": "/static/IconosPWA/Icon48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/static/IconosPWA/Icon144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/static/IconosPWA/Icon192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/IconosPWA/Icon256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/static/IconosPWA/Icon384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/static/IconosPWA/Icon512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/inicio",
+  "display": "standalone",
+  "background_color": "#fff8e7",
+  "theme_color": "#000000",
+  "description": "Página dedicada a la venta de productos para perros y gatos ❤️"
+}
