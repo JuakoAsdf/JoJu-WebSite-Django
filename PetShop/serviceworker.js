@@ -1,11 +1,22 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-    '/',
+    '',
     '/static/css/estilos.css',
     '/static/img/fotos/logo.png',
 	'/static/css/EstiloCompra.css',
 	'/static/css/Estilosindex.css',
-	'/static/css/estilos.css',
+	'inicio',
+	'adultocat',
+	'gatitocat',
+	'accesocat',
+	'adultodog',
+	'cachorrodog',
+	'accesodog',
+	'adopta',
+	'nosotro',
+	'log',
+	'buscar',
+	'regis',
 ];
 
 self.addEventListener('install', function(event) {

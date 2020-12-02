@@ -1,75 +1,41 @@
 {
-<<<<<<< HEAD
   "name": "JoJu Website",
   "short_name": "JoJu PetShop",
   "icons": [
     {
       "src": "/static/IconosPWA/Icon48x48.png",
-=======
-  "name": "Joju Petshop",
-  "short_name": "Joju Petshop",
-  "icons": [
-    {
-      "src": "/static/Iconos PWA/logo48x48.png",
->>>>>>> b4cc68dc0bbecf647e82ebbbf10e2fd940aaede0
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-<<<<<<< HEAD
       "src": "/static/IconosPWA/Icon144x144.png",
-=======
-      "src": "/static/Iconos PWA/logo144x144.png",
->>>>>>> b4cc68dc0bbecf647e82ebbbf10e2fd940aaede0
       "type": "image/png",
       "sizes": "144x144"
     },
     {
-<<<<<<< HEAD
       "src": "/static/IconosPWA/Icon192x192.png",
-=======
-      "src": "/static/Iconos PWA/logo192x192.png",
->>>>>>> b4cc68dc0bbecf647e82ebbbf10e2fd940aaede0
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-<<<<<<< HEAD
       "src": "/static/IconosPWA/Icon256x256.png",
-=======
-      "src": "/static/Iconos PWA/logo256x256.png",
->>>>>>> b4cc68dc0bbecf647e82ebbbf10e2fd940aaede0
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-<<<<<<< HEAD
       "src": "/static/IconosPWA/Icon384x384.png",
-=======
-      "src": "/static/Iconos PWA/logo384x384.png",
->>>>>>> b4cc68dc0bbecf647e82ebbbf10e2fd940aaede0
       "type": "image/png",
       "sizes": "384x384"
     },
     {
-<<<<<<< HEAD
       "src": "/static/IconosPWA/Icon512x512.png",
-=======
-      "src": "/static/Iconos PWA/logo512x512.png",
->>>>>>> b4cc68dc0bbecf647e82ebbbf10e2fd940aaede0
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": "/inicio",
   "display": "standalone",
-<<<<<<< HEAD
   "background_color": "#fff8e7",
   "theme_color": "#000000",
   "description": "Página dedicada a la venta de productos para perros y gatos ❤️"
-=======
-  "background_color": "#FFF8E7",
-  "theme_color": "#000000",
-  "description": "Testeando PWA"
->>>>>>> b4cc68dc0bbecf647e82ebbbf10e2fd940aaede0
 }
